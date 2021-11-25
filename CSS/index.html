@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* selector { property: value; p2: value2;} */
+        /*  ^ selector ^-------------^: */
+        /* This is internal CSS */
+        /* Element Selector */
+        body {
+            background-color: grey;
+            /* Set letters as this color as default */
+            /* color: rgb(172, 78, 78); */
+        }
+        h2 {
+            color: rgb(125,125,200);
+        }
+        h4 {
+            color: rgba(0,0,0,0.5);
+        }
+        /* h1 {
+            color: blue;
+        }
+        p {
+            background-color: darkmagenta;
+        } */
+        h1, p, div {
+            color: pink;
+        }
+        /* This is a class */
+        .blue {
+            color: blue;
+        }
+        /* CASE SENSITIVE */
+        .uppercase {
+            text-transform: uppercase;
+        }
+        /* THIS CAN BE ONLY USED ONCE! */
+        #the-title {
+            text-decoration: underline;
+        }
+        #the-subtitle {
+            text-decoration: dotted
+            color: aqua;
+        }
+
+        /* ONLY UNDER P AND UNDER STRONG */
+        p strong i {
+            /* HEX COLOURS: WITH SPECIFIC COLOUR*/
+            color: #fff000;
+            font-size: 50px;
+        }
+
+        /* DEFAULT COLOR */
+        a {
+            color: black;
+        }
+        /* WHEN YOU HOVER YOUR MOUSE */
+        a:hover {
+            color: blue;
+        }
+        /* WHEN YOU CLICK IT */
+        a:active {
+            color: red;
+        }
+        a:visited {
+            color: yellow;
+        }
+
+    </style>
+</head>
+<!-- <body style="color: red;"> -->
+<body>
+    <!-- Inline CSS, not a good practice -->
+    <!-- <h1 style="font-size: 10px">This is an h1</h1> -->
+    <!-- <h1 style="color: blue">This is another h1</h1> -->
+    <!-- <h1 style="font-size: 20px"; style="color: rgb(0, 255, 136)">This is a mix of two style CSS</h1> -->
+
+    <h1 id="the-subtitle">Hello world</h1>
+    <div class="blue uppercase">This is a div</div>
+    <p class="uppercase">
+        This shouldn't be affected.This is a paragraph Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo dolore eos quis illo nesciunt eius vitae assumenda numquam, provident cumque suscipit perferendis consequatur. Sequi magni libero quis soluta facere rerum!
+    </p>
+    <h1 class="blue" id="the-title">Hihihihih</h1>
+    <h2>This should be 125,125,125</h2>
+    <strong>This is bolded text</strong>
+    This is normal text
+
+    <h1 >This is a h1</h1>
+    <div >This is a div</div>
+    <p >This is a paragraph</p>
+
+    <h2>Hello</h2>
+
+    <h4>This should be transparent grey</h4>
+
+    <div>
+        <p>
+            <strong> ipsum dolor <i>sit amet</i> consectetur adipisicing elit. Hic voluptatem voluptas,</strong> nobis facere ratione praesentium facilis debitis saepe rerum molestias repellendus aliquam officiis rem necessitatibus aperiam molestiae illum quo quibusdam? 
+        </p>
+        <strong>This is bold</strong>
+    </div>
+
+    Lorem ipsum dolor sit amet consectetur, <a href="https://www.google.com">adipisicing elit.</a> Nostrum quo facere numquam commodi autem provident quis modi odit at animi, sequi perspiciatis esse voluptatum quaerat repudiandae dolorum officia cumque quidem.
+</body>
+</html>
