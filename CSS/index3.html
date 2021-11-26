@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <style>
+            /* CENTER THE TEXT */
+            h1#intro {
+                text-align: center;
+            }
+            div.red-border {
+            /* THICKNESS OF THE BORDER */
+                border-width: 2px;
+                border-style: dashed ;
+                border-color: red;
+                /* border-color: #f00 */
+
+            /* MAKES AN ANGLE AT THE EDGE */
+                /* border-radius: 10px; */
+                border-top-left-radius: 5px;
+                border-top-right-radius: 50%;
+                border-bottom-left-radius: 50%;
+                border-bottom-right-radius: 5px;
+            /* SAME AS */
+                border-radius: 5px 50% 50% 5px;
+
+                width: 200px;
+                height: 200px;
+
+            /* OVERWRITES THE TOP PART */
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="red-border">This is a border</div>
+        <h1 id="intro">Hi my name is JaeWon Jo</h1>
+    </body>
+</html>
