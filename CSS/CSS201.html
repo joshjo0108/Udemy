@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 201</title>
+    <style>
+        div {
+            border: 1px solid red;
+            display: inline;
+            margin: 5px;
+            padding: 10px;
+        } 
+        
+        .box {
+            border: 5px solid black;
+            height: 300px;
+            width: 300px;
+        /* INSIDE THE BORDER */
+            padding: 30px;
+        /* OUTSIDE THE BORDER */
+            margin: 30px;
+        /* LIMITS THE TOTAL SIZE TO 300px X 300px */
+            box-sizing: border-box;
+
+            outline: 5px solid red;
+        /* MOVE OUTWARDS */
+            outline-offset: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>This is the first</div>
+    <div>This is the second</div>
+    <div>This is the third</div>
+    <div class="box"></div>
+</body>
+</html>
