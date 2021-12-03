@@ -11,12 +11,12 @@
             left: 0;
             top: 0;
         }
-        div {
+        /* div { */
             /* border: 1px solid red; */
-            display: inline-block;
+            /* display: inline-block; */
             /* margin: 5px; */
-            padding: 10px;
-        } 
+            /* padding: 10px; */
+        /* }  */
         
         .box {
             display: block;
@@ -75,6 +75,14 @@
             top: 0;
             left: 0;
         }
+        .sticky-box {
+            position: sticky;
+            color: black;
+            background-color: #f5f5f5;
+            border-bottom: 2px solid #ccc;
+            top: 0;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -103,5 +111,21 @@
     <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident maiores ullam repellat! Soluta ad nihil incidunt enim ipsum repudiandae voluptas deleniti voluptatibus, beatae consequatur rerum ut, quae aspernatur! Adipisci, enim!
     </p>
+
+    <div style="background-color: red; color: white">
+        <div class="sticky-box"> Section 1</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+    </div>
+
+    <div style="background-color: blue; color: black">
+        <div class="sticky-box"> Section 2</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut placeat corporis dicta veniam animi quasi, ipsum earum autem, eveniet distinctio voluptas, ex delectus tempore! Illo qui corporis harum nostrum quos!</p>
+    </div>
 </body>
 </html>
