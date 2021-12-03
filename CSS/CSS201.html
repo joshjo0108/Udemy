@@ -50,7 +50,7 @@
             min-width: 350px;
             max-width: 400px;
         }
-
+    /* HAVING A BOX WITHIN A BOX */
         .outer-box {
             border: 2px solid black;
             height: 200px;
@@ -66,6 +66,7 @@
             top: 0;
             right: 0;
         }
+    /* THE HEADER AT THE TOP THAT WOULD NOT MOVE */
         .fixed-box {
             background-color: #f5f5f5;
             border-bottom: 2px solid #ccc;
@@ -75,6 +76,7 @@
             top: 0;
             left: 0;
         }
+    /* AS YOU SCROLL YOU WILL HAVE THE HEADER PUSHED UP OR DOWN */
         .sticky-box {
             position: sticky;
             color: black;
@@ -83,12 +85,95 @@
             top: 0;
             padding: 20px;
         }
+    /* HAVING A TEXT WITHIN A BOX THAT CAN BE SCROLLED UP AND DOWN */
         .overflow-box {
             height: 300px;
             width: 300px;
             background-color: pink;
             overflow: auto;
             border: 2px solid red;
+        }
+        .center-box {
+            height: 400px;
+            width: 400px;
+            border: 2px solid blue;
+        /* GIVE TOP 40px AND CENTER IT */
+            margin: 40px auto;
+        }
+    /* SPECIFYING ONLY WITHIN PARENT'S ID, MAKE .child CLASS WORK*/
+        .child {
+            border: 2px solid blue;
+            height: 20px;
+        }
+        /* #parent .child + .child {
+            background-color: red;
+        }
+        #parent .child ~ .child {
+            background-color: black;
+        } */
+    /* ANYTING THAT IS NOT .dontselectme CLASS, THEN COLOR THE BACKGROUND TO PINK */
+        .child:not(.dontselectme) {
+            background-color: pink;
+        }
+        #parent .child:hover {
+            background-color: red;
+        }
+        .child:nth-child(3) {
+            background-color: aqua;
+        }
+        .pseudo {
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            margin: 50px auto;
+            position: relative;
+            background-color: black;
+        }
+        .pseudo::before {
+            content: ' ';
+        /* THIS IS IMPERATIVE TO MAKE IT INTO A BOX */
+            display: block;
+            border: 3px solid red;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            z-index: -1;
+        }
+        .pseudo::after {
+            content: ' ';
+        /* THIS IS IMPERATIVE TO MAKE IT INTO A BOX */
+            display: block;
+            border: 3px solid blue;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            z-index: -1;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            position: relative;
+        }
+        a::before {
+            content: ' ';
+            width: 100%;
+        /* THICKNESS OF THE LINE */
+            height: 4px;
+            background-color: red;
+            position: absolute;
+        /* THIS DRAWS AN UNDERLINE, IF THIS IS top:0, IT WILL DRAW A LINE ON TOP */
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+        a:hover::before {
+            background-color: red;
+            height: 15px;
+            z-index: -1;
         }
     </style>
 </head>
@@ -143,5 +228,23 @@
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, ratione numquam! Exercitationem enim ad et aspernatur mollitia quis animi sunt vitae nihil molestias! Quae, exercitationem ratione. Soluta voluptas animi eveniet.
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, ratione numquam! Exercitationem enim ad et aspernatur mollitia quis animi sunt vitae nihil molestias! Quae, exercitationem ratione. Soluta voluptas animi eveniet.
     </div>
+    <div class="center-box">
+        Lorem ipsum dolor sit amet consectetur
+    </div>
+    <div id="parent">
+        <div class="child"></div>
+        <div class="child dontselectme"></div>
+    <!-- BY USING nth-child(3), WE CAN SPECIFICALLY SELECT THIS CHILD CLASS -->
+        <div class="child">SELECT ME</div>
+        <div class="child"></div>
+    </div>
+<!-- SINCE THE CLASS IS IN FORM OF #parent .child, THIS WILL NOT WORK -->
+<!-- IT IS NOT WITHIN THE parent -->
+    <div class="child">This is outside of the parent id</div>
+
+    <div class="pseudo"></div>
+<!-- DRAW A HORIZONTAL LINE -->
+    <hr> 
+    Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing elit. Fugit, atque cupiditate temporibus id doloribus porro quia architecto amet fugiat perferendis ab minima, officiis dolor provident explicabo eum commodi nam nulla!
 </body>
 </html>
