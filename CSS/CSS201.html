@@ -132,6 +132,7 @@
         .pseudo::before {
             content: ' ';
         /* THIS IS IMPERATIVE TO MAKE IT INTO A BOX */
+        /* ONLY APPLICABLE FOR BOX */
             display: block;
             border: 3px solid red;
             width: 100%;
@@ -159,6 +160,7 @@
             position: relative;
         }
         a::before {
+        /* DOES NOT REQUIRE display: block */
             content: ' ';
             width: 100%;
         /* THICKNESS OF THE LINE */
@@ -172,8 +174,41 @@
         }
         a:hover::before {
             background-color: red;
-            height: 15px;
+            height: 100%;
             z-index: -1;
+        }
+    /* PSEUDO FIRST LINE AND FIRST CHARACTER */
+        p::first-letter {
+        /* MAKE THE FIRST CHARACTER FLOAT AROUND THE SPACE */
+            float: left;
+            font-size: 20px;
+            font-style: inherit;
+            margin: 5px;
+        }
+        p::first-line {
+            font-weight: bold;
+            font-style: italic;
+        }
+    /* CHANGES THE BACKGROUND AND THE COLOR OF THE TEXT WHEN CLICKED AND DRAGGED */
+        ::selection {
+            background-color: green;
+            color: white;
+        }
+        a {
+            background-color: #fff;
+            border: 2px solid black;
+            color: #000;
+            padding: 5px 15px;
+            display: inline-block;
+            text-decoration: underline;
+            transition: background-color .2s,
+                        color 0.4s,
+                        padding 1s;
+        }
+        a:hover {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 30px;
         }
     </style>
 </head>
@@ -246,5 +281,10 @@
 <!-- DRAW A HORIZONTAL LINE -->
     <hr> 
     Lorem ipsum dolor, <a href="#">sit amet consectetur</a> adipisicing elit. Fugit, atque cupiditate temporibus id doloribus porro quia architecto amet fugiat perferendis ab minima, officiis dolor provident explicabo eum commodi nam nulla!
+
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, laudantium labore officia cumque blanditiis tenetur odit adipisci esse minus iste inventore ullam quod nostrum veniam magnam odio laboriosam molestiae expedita!
+    </p>
+    <a href="#" class="button">Click Me</a>
 </body>
 </html>
