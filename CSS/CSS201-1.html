@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <style>
         body, html {
             height: 100%;
@@ -13,19 +14,89 @@
         }
         body {
             /* background-color: orange; */
-        /* MAKE SURE TO RIGHT CLICK THE PICTURE AND COPY THE ADDRESS OF THE PICTURE */
-            background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.9) 100%),
+        /* MAKE SURE TO RIGHT CLICK THE PICTURE AND COPY THE ADDRESS OF THE */
+            background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%),
                                 url("https://images.unsplash.com/photo-1638871735143-4d16a2f15ddc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80");
             background-size: cover;
             /* left: 0; */
             /* top: 0; */
             color: white;
             font-size: 90px;
+        /* IF Corinthia DOES NOT EXIST, USE cursive */
+            font-family: 'Corinthia', cursive;
             text-align: center;
+        /* MOVE THE TEXT A BIT DOWN */
+            margin: 50px;
+        }
+        .box {
+            height: 400px;
+            width: 400px;
+            border: 10px solid white;
+            font-size: 10px;
+        /* THIS SETS THE BOX IN THE MIDDLE */
+            margin: 10px auto;
+            transform: rotate(45deg);
+        /* 150% */
+            transform: scale(1.5);
+        /* x AND y AXIS */
+            transform: skew(25deg, 25deg);
+            transform: skewX(25deg);
+        /* ANOTHER WAY OF MOVING THE BOX BY x AND y AXIS */
+        /* OFFSET */
+            transform: translate(100px, 100px);
+        }
+        .circle {
+            height: 300px;
+            width: 300px;
+            border: 10px solid black;
+        /* THIS IS REQUIRED WHEN YOU WANT A CIRCLE */
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+        /* THIS IS WHAT IS REQUIRED FOR THE ANIMATION TO WORK */
+            animation-name: slideMe;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        /* @keyframes slideMe {
+            from {
+                top: 0;
+                left: 0;
+            }
+            to {
+                left: 90%;
+            }
+        } */
+        @keyframes slideMe {
+            0% {
+                top: 0;
+                left: 0;
+            }
+            25% {
+                top: 0;
+                left: 80%;
+            }
+            50% {
+                top: 80%;
+                left: 80%;
+            }
+            75% {
+                top: 80%;
+                left: 0;
+            }
+            100% {
+                top: 0;
+                left: 0;
+            }
         }
     </style>
 </head>
 <body>
     This is an image!!
+    <div class="box"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quasi sapiente libero quos iste. Corrupti dignissimos nulla exercitationem accusantium voluptatum obcaecati, labore voluptas autem id sed earum excepturi laboriosam animi!    </div>
+    <div class="circle"></div>
 </body>
 </html>
