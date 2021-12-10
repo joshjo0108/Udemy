@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* WITHOUT THIS IT WILL NOT LOOK LIKE A TABLE */
+        * {
+            box-sizing: border-box;
+        }
+        #container {
+        /* THIS IS USED TO MAKE A TABLE */
+            display: flex;
+        /* WHEN YOU DON'T WANT TO GO OUTSIDE OF THE PAGE */
+            flex-wrap: wrap;
+        }
+        #container div {
+            /* border: 1px solid black */
+        }
+        #container .header {
+            flex-basis: 100%;
+            border-bottom: 2px solid black;
+            padding: 10px;
+            background-color: #f5f5f5;
+            color: grey;
+            font-size: 40px;
+        }
+        #container .navigation {
+            flex-basis: 20%;
+            border-bottom: 2px solid black;
+            flex-grow: 0;
+            flex-shrink: 1;
+            padding: 10px;
+            font-size: 20px;
+        }
+        #container .content {
+            flex-basis: 80%;
+            border-bottom: 2px solid black;
+            flex-grow: 1;
+            flex-shrink: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="header">This is a header</div>
+        <div class="navigation">Navigation</div>
+        <div class="content">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia non fugiat rerum laboriosam sequi assumenda exercitationem quasi cumque. Necessitatibus, quae itaque qui natus unde sint minima blanditiis perferendis ex placeat!</p>
+            <h3>Header 3</h3>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure cupiditate labore aliquam sint nisi. Perspiciatis aperiam maxime ut nihil accusantium assumenda illum deserunt iste modi, totam obcaecati quaerat rerum sint.</p>
+        </div>
+    </div>
+</body>
+</html>
