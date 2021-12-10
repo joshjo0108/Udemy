@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!-- TRY TO USE GRID FOR MAKING TABLES -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #grid {
+            display: grid;
+        /* MAKES 3 COLUMNS */
+            grid-template-columns: auto auto auto;
+            grid-row-gap: 10px;
+            grid-column-gap: 10px;
+        }
+        .item {
+            border: 2px solid red;
+            /* height: 200px; */
+            /* width: 200px; */
+        }
+    /* grid-start & end IS USED TO MERGE CELLS! */
+        .item1 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            height: 100px;
+        }
+        .item4 {
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .item2 {
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <div class="item item1">This is a header</div>
+        <div class="item item2">content1</div>
+        <div class="item item2">content2</div>
+        <div class="item item4">Navigation</div>
+        <div class="item item1">Additional note</div>
+        <div class="item item1">Footer</div>
+    </div>
+</body>
+</html>
