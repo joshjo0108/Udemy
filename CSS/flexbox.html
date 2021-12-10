@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        /* MAKE THE BORDER-LINE INCLUDED IN WIDTH AND HEIGHT PERCENTAGE*/
+            box-sizing: border-box;
+        }
+        #layout {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #nav {
+            text-align: center;
+            padding: 5px;
+            flex-basis: 100%;
+            border-bottom: 1px solid grey;
+        }
+        #sidebar {
+            padding: 5px;
+            flex-basis: 20%;
+            border-bottom: 1px solid grey;
+            border-right: 1px solid grey;
+        }
+        #content {
+            padding: 5px;
+            flex-basis: 80%;
+            border-bottom: 1px solid grey;
+        }
+        @media (max-width:640px) {
+            #sidebar, #content {
+                flex-basis: 100%;
+            /* SET THE BORDER TO NONE */
+                border-right: 0;
+            }
+        }
+        @media (max-width:475px) {
+            #sidebar {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="nav">This is navigation</div>
+        <div id="sidebar">This is a sidebar</div>
+        <div id="content">This is a content</div>
+    </div>
+</body>
+</html>
