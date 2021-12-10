@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- IMPORTANT PART -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* IMAGE BEING "RESPONSIVE" DEPENDING ON THE SIZE OF THE WIDTH */
+        img {
+            width: 50%;
+            height: auto;
+        }
+    /* EVERY DEVICE */
+    /* OR "MOBILE FIRST" WHEN USING <min-width> OR SWAPPED AROUND "DESKTOP FIRST" WHEN USING <max-width>*/
+    /* DEPENDING ON max/min-width */
+        body {
+            background-color: blue;
+        }
+    /* WHEN THE WIDTH IS BELOW 640px KEEP THE BACKGROUND AS RED */
+    /* THIS COULD BE MOBILE FIRST */
+        @media (max-width: 640px) {
+            body {
+                background-color: red;
+            }
+            img {
+                width: 100%;
+            /* DON'T NEED height SINCE IT IS INHERITED FROM THE TOP */
+                /* height: auto; */
+            }
+        }
+    /* IF THE WIDTH IS MINMUM OF 1000px, KEEP THE BACKGROUND AS GREEN */
+    /* THIS COULD BE A DESKTOP FIRST */
+        @media (min-width: 1000px) {
+            body {
+                background-color: green;
+            }
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            /* height: 100%; */
+            padding-top: 56.25%;
+            overflow: hidden;
+        }
+    /* MAKING THE VIDEO EMBED RESPONSIVE */
+    /* MAKING IT FIT THE WHOLE SCREEN */
+        .container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .box {
+            border: 10px solid black;
+        /* PLACE THE BOX IN THE CENTER */
+            margin: 20px auto;
+            width: 400px;
+            height: 400px;
+            border-radius: 0%;
+            text-align: center;
+        }
+    /* CHANGE THE BOX INTO CIRCLE WHEN IT IS BETWEEN 500px AND 1000px */
+        @media (min-width: 500px) and (max-width:1000px) {
+            .box {
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">BOX</div>
+    <div class="container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UKFgHBZ51OE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+    <hr>
+    <img src="https://images.unsplash.com/photo-1639134501889-66bc86217baa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60" alt="Japan">
+
+</body>
+</html>
