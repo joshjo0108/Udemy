@@ -55,3 +55,25 @@ if(age>=18){
 } else {
     console.log("You are not old enough to drink alcohol!");
 }
+// ONLY WHEN YOU WANT TO MODIFY STUFF FROM HTML FILE USING .JS
+/*
+const text = document.getElementById("text");
+text.innerText = "Something different!";
+text.innerHTML = "THIS is html <strong>modification</strong>";
+*/
+
+// MORE OBJECTS
+const person = {
+    "name":"Jae Won Jo",
+    "age":25,
+    "height":8.5
+}
+ const cat = {
+     'name':"Zephyr",
+     'words':'Meow',
+     'action': "Nap",
+     'size': 'big'
+ }
+
+ // WHEN YOU WANT TO ACCESS TO THESE OBJECTS
+//  cat['action'] <- USE IT LIKE THIS
