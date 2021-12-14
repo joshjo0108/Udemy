@@ -35,3 +35,23 @@ const obj = {   //LIKE A DICTIONARY
     'age': 30
 }   // CAN BE ACCESSED WITH -> obj['name']
 
+
+const name = 'Jae Won Jo';
+if (name == 'Aaron'){
+    console.log("this is Aaron!");
+}
+else if (name == 'Nathan'){
+    console.log("This is Nathan");
+}
+else {
+    console.log("This is", name);
+}
+
+const age = 17;
+if(age>=18){
+    console.log("Now you are allowed to vote!");
+} else if(age>=21) {
+    console.log("You are allowed to drink!");
+} else {
+    console.log("You are not old enough to drink alcohol!");
+}
