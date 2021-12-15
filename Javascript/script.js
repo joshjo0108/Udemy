@@ -77,3 +77,49 @@ const person = {
 
  // WHEN YOU WANT TO ACCESS TO THESE OBJECTS
 //  cat['action'] <- USE IT LIKE THIS
+
+let course = "     This is a javascript course!   ";
+
+// typeof(course); <- THIS IS WHEN YOU WANT TO KNOW WHAT TYPE IT IS
+
+course.search("javascript");    // TELL ME WHICH PLACE IT IS
+course.slice(5,8);  // STARTING FROM 5TH UNTIL 8TH
+course.substr(5,3); // STARTING FROM 5TH, AND LENGTH OF 3
+course.replace("javascript", "java101");    // REPLACE A STRING WITH SOMETHING ELSE
+course.toUpperCase();   // ALL TO UPPER CASE
+course.toLowerCase();   // ALL TO LOWER CASE
+course.trim();      // TRIM ALL THE EXCESS SPACE THAT IS AT THE BEGINNING OR AT THE END
+
+words = course.split(" ");  // SPLIT THE STRING INTO AN ARRAY
+console.log(words);
+
+course.length;  // DOES NOT REQUIRE ()
+
+course[0];
+
+// CASTING----------------------------------------------------------------------------------------
+let age2 = '31';
+
+age2 = Boolean(age2); // ANYTHING THAT IS 0 IS "FALSE", OTHER THAN THAT IT IS "TRUE"
+age2 = String(age2);
+age2.replace("1","3");   // CASTING THE INTEGER TO STRING AND CHANGE THE 1 TO 3
+
+let myage = 51;
+
+age2 = Number(age2);
+let result = age2 + myage;
+
+// CONCATENATION---------------------------------------------------------------------------------
+// TEMPLATE LITERAL ${}
+const name1 = "Jae Won Jo";
+let age1 = 21; 
+// OLD SCHOOL WAY
+console.log("My name is "+ name1 + ". My age is " + age1);
+// MODERN WAY OF CONCATENATION
+console.log(`My name is ${name}. My age is ${age1}`);
+
+// ARRAY ---------------------------------------------------------------------------------
+let lst = [1,"two",3,[], {}];
+lst.push("New item here");
+
+let newItem = lst.pop();    //TAKES THE LAST ITEM TO newItem AND REMOVES THE LAST ITEM FROM lst
