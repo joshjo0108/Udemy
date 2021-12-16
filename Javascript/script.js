@@ -173,4 +173,17 @@ function multiplyNumber(num1, num2){
 
 const addedTotal = addNumber(1,2);
 const multiTotal = multiplyNumber(4,3);
-const greeting = greeting("Jae Won")
+const greetings = greeting("Jae Won")
+
+// ...function, USING THE <REST FUNCTION>
+function addNumbers(greetingName, ...numbers){
+    let total = 0;
+// ANOTHER WAY OF WRITING FOR LOOP
+    for(index in numbers){
+        total += numbers[index];
+    }
+    return `My name is ${greetingName}, and my total number is ${total}`;
+}
+
+const results = addNumbers("Jae Won Jo",1,2,3,4,5);
+console.log(results);
