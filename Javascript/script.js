@@ -187,3 +187,24 @@ function addNumbers(greetingName, ...numbers){
 
 const results = addNumbers("Jae Won Jo",1,2,3,4,5);
 console.log(results);
+
+// OBJECTS WITH FUNCTIONS
+const person = {
+    "name": "Jae Won",
+    "age": 25,
+    "height": "6'5\"",
+// want IS SET AS A DEFAULT
+// THIS IS A OLD WAY OF WRITING OBJECT
+    "speak": function(want = "cookies") {
+        console.log(`I want ${want}`);
+    },
+// to IS SET AS A DEFAULT
+// CONVENTIONAL WAY OF WRITING AN OBJECT!!!
+    talk(to = "Jae Won"){
+        console.log(`I am talking to ${to}`);
+    }
+}
+
+// THIS IS HOW TO USE THE FUNCTION WITHIN THE OBJECT
+person.speak("Pizza");  // DEFAULT VALUE IS OVERWRITTEN
+person.talk("Miri");
