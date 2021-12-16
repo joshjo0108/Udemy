@@ -123,3 +123,54 @@ let lst = [1,"two",3,[], {}];
 lst.push("New item here");
 
 let newItem = lst.pop();    //TAKES THE LAST ITEM TO newItem AND REMOVES THE LAST ITEM FROM lst
+
+// FOR LOOP ---------------------------------------------------------------------------------
+const arr = ["Zero","One","Two","Three","Four"];
+// OLD STYLE WAY OF FOR LOOP
+for(let i=0; i<arr.length; i++){
+    console.log(i);
+    console.log(arr[i]);
+}
+// MORE MODERN WAY OF DOING FOR LOOP
+arr.forEach(num => {
+    console.log(num);
+})
+
+// SELECTING MULTIPLE NODES
+// SELECT ALL .this-class
+// THIS typeof() IS : STRING
+const elements = document.querySelector(".this-class").innerText;
+
+// SELECT ALL <li>
+const elements2 = document.querySelectorAll("li");
+
+// CHANGE THE TEXT USING THIS FOR LOOP
+elements2.forEach((node,index) => {
+    node.innerText = `This is changed to text number ${index+1}!`
+});
+
+// ADDING CLASS TO THE NODE
+elements2.forEach(node =>{
+    node.classList.add("custom-class","second-class");
+});
+
+// FUNCTION
+function greeting(name){
+// INSTEAD OF USING console.log(); USE return
+    return `Hello ${name}`;
+}
+
+function addNumber(num1, num2){
+// IF result IS OUTSIDE OF THIS FUNCTION, IT IS NO LONGER EXISTS
+    const result = Number(num1) + Number(num2);
+    return result;
+}
+
+function multiplyNumber(num1, num2){
+    const result = Number(num1) * Number(num2);
+    return result;
+}
+
+const addedTotal = addNumber(1,2);
+const multiTotal = multiplyNumber(4,3);
+const greeting = greeting("Jae Won")
