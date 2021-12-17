@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    <script>
+    // BEFORE LOADING ALL HTML
+        window.onload = function() {
+            // WRITE ALL OF OUR JAVASCRIPT IN HERE
+            alert("Page is loaded!");
+        }
+    // WHEN YOU WANT TO TRACK PEOPLE'S PROGRESS
+        window.onbeforeunload = function() {
+            console.log("before unload");
+            return "Are you sure you want to leave the page?";
+        }
+    // STRICT COMPARISON
+        let num = "0";
+        console.log(num == 0); //TRUE
+        console.log(num == "0"); //TRUE
+    // THIS IS STRICT COMPARISON
+        console.log(num === 0); //FALSE
+
+    // VARIABLE SCOPING
+        const num1 = 1234;
+
+        if(num1 === 1234){
+        // IF IT IS const OR let, IT WILL NOT BE ACCESSIBLE OUTSIDE OF THESE IF STATEMENT
+            const greetings = "Hello~";
+        // var IS ACCESSIBLE OUTSIDE OF THE IF STATEMENT : MORE FLUID
+            var hello = "Hello~";
+        }
+
+        // console.log(greetings); // THIS GENERATES AN ERROR MESSAGE
+        console.log(hello);     // THIS WORKS
+
+    // VARIABLE HOISTING
+        var name;
+        console.log("First", name);
+        name = "Jae Won Jo";    // DEFINE THE VARIABLE LATER
+        console.log("Second", name);
+
+    // JAVASCRIPT CLOSURE
+        let person1 = "Jae WOn Jo";
+        function greeting() {
+            // person1 CAN BE ACCESSED FROM OUTSIDE OF THE SCOPE
+            console.log(`Person1 is ${person1}`);
+            var person2 = "Jon";
+        }
+        greeting();
+        // NOTICE: console.log(person2); <- THIS WORKS
+        console.log(`The second person is ${person2}`); // BUT THIS DOESN'T WORK
+    </script>
+</body>
+</html>
