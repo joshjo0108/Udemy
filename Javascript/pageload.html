@@ -54,7 +54,219 @@
         }
         greeting();
         // NOTICE: console.log(person2); <- THIS WORKS
-        console.log(`The second person is ${person2}`); // BUT THIS DOESN'T WORK
+        // console.log(`The second person is ${person2}`); // BUT THIS DOESN'T WORK
+
+    // CALLBACK FUNCTION
+        console.log("Wait for 2.5 seconds");
+        setTimeout(function() {
+            console.log("This is going to be executed, but going to appear after 2.5 seconds");
+        }, 2500);
+        console.log("This looks like it's a last line but it's actually executed earlier than above line of code");
+
+    // INTERVAL
+        let count = 0;
+        const myInterval = setInterval(function() {
+            count++;
+            console.log("Checking something...");
+
+            if(count === 3){
+                // ENDING INTERVAL
+                clearInterval(myInterval);
+                console.log("Finished checking");
+            }
+        },2000)
+
+    // STRICT MODE
+        "use strict";   // MAKE SURE TO HAVE THIS!!!!
+
+        let x = "thing";
+        x = "Something else";                   // THIS IS OKAY
+        y = "This is going to cause an error";  // THIS IS "NOT" OKAY
+        console.log(x);
+
+    // WHILE LOOP
+    // 1ST METHOD
+        let num2 = 0;
+        while(num2 < 100) {
+            console.log(num2);
+            num2++;00
+        }
+    // 2ND METHOD : IN PYTHON, PHP, NODEJS
+        while(true) {
+            //  THIS WILL ASK FOR ANSWER USING A POP UP SCREEN 
+            let name = prompt("What is your name? Guess it!");
+            if(name === "Jae Won Jo") {
+                console.log("Your guess was correct!");
+                break;
+            }
+            console.log("Your guess was wrong try again!");
+        }
+
+    // DATE FORMATTING
+        let d = new Date(2025,0,15);
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        console.log(months[d.getMonth()]);  // JAN
+        // CHANGE THE YEAR
+        d.setYear(2020);
+
+    // DESTRUCTURING ARRAYS AND OBJECTS
+        const month2 = ["January", "February", "December"];
+        // DESTRUCTURING
+        const [jan, feb, dec] = month2;     // jan = "January", feb = "February", dec = "December"
+        // THIS WILL SAVE TYPING -> INSTEAD OF WRITTING, month2[0]; === jan
+        console.log(jan);
+        console.log(feb);
+        console.log(dec);
+
+        const person3 = {
+            "name": "Jae Won Jo",
+            "age": 25,
+            "career": "entrepreneur"
+        }
+        if(true){
+            // DESTRUCTURING!!!
+            const {name, age} = person3;
+            // JUST USE "name" INSTEAD OF person3[name] or "age" INSTEAD OF person3[age]
+            console.log(name);
+        }
+        // YOU CANNOT DELETE THE WHOLE OBJECT -> SO NO <delete person3;>
+        delete person3["age"];
+        console.log(person3);
+        
+        Math.round(4.6); // 5
+        Math.round(4.4); // 4
+        Math.ceil(4.1);  //4
+        Math.floor(23.9)    //23
+        Math.pow(8,2);   //64
+        8**2;            //64
+        Math.sqrt(64);   //8
+        Math.max(1,2,64,8);  // 64
+        Math.min(-1,-24,-5,6)   //-24
+    
+    // GENERATE RANDOM NUMBER
+        Math.random();          //BETWEEN 0 AND 1
+        Math.random() * 100;    //BETWEEN 0 AND 100
+        Math.random() * 83;     //BETWEEN 0 AND 83
+        Math.floor(Math.random() * 100);    // ROUND THE NUMBER DOWN
+
+    
+
+    // GRACEFULLY HANDLE AN ERROR
+        const num3 = 10
+        
+        try {
+        // IF IT IS const, THIS IS GOING TO THROW AN ERROR 
+            num3 += 10;
+            // throw "JaeWon custom error";
+        // FROM ONWARDS IT WILL NOT BE EXECUTED BUT MOVED TO catch IF IT USES "throw"
+            // console.log("A thing in here");
+            // functionThatDoesNotExist();
+        } catch(error) {        // THROWING AN ERROR
+            console.warn("Error logging", error);
+        } finally {
+            console.log("The final number is", num3);
+        }
+
+        // CODING SHOULD STILL BE EXECUTED PROPERLY
+        console.log("SHOW ME!");
+
+    // "this" KEYWORD
+        const person4 = {
+            "name": "Jae Won",
+            speak() {
+                console.log(`This person's name is: ${this.name}`);
+            }
+        }
+        person4.speak();
+
+        function counter(){
+            // THIS IS ANOTHER WAY OF INITIATING A VARIABLE
+            if(this.total === undefined) {
+                this.total = 1;
+            } else {
+                this.total++;
+            }
+            console.log("function counter has run", total, "times.");
+        }
+
+        counter();
+        counter();
+
+        // 3 WAYS OF WRITING A FUNCTION
+        // OLD FASHION WAY
+        function myName(name) {
+            console.log(`Hello, ${name}`);
+        }
+        const anonymousFunction = function(name) {
+            console.log(`Hello, ${name}`);
+        // this <- ONLY WITHIN THE FUNCTION
+            this
+        }
+        const arrowFunc = (name) => {
+            console.log(`Hello, ${name}`);
+        // FOR GLOBALS, OUTSIDE OF THIS FUNCTION
+            this
+        }
+        // CAN BE WRITTEN AS ONE LINE
+        const arrowFunc2 = (name) => console.log(`Hello, ${name}`);
+
+        arrowFunc2("Jae Won");
+    // CLASSES!!!
+        class MyNameClass {
+            setName(name) {
+            // this.name IS THE NAME OF THIS ENTIRE OBJECT!
+                this.name = name;
+            }
+            speak() {
+                if(this.name === undefined){
+                    this.name = "NewDoogy";
+                }
+                console.log(`Woof Woof says ${this.name}`);
+            }
+        }
+
+        const thing = new MyNameClass();
+        thing.setName("JOJO");
+        thing.speak();
+
+    // CONSTRUCTOR METHOD CLASS
+        class Person {
+            constructor(name, secondParam) {
+                this.name = name;
+                this.secondParam = secondParam;
+            }
+            greeting() {
+                console.log(`Hello my name is ${this.name} and the second param is ${this.secondParam}`);
+            }
+            setName(name) {
+                this.name = name;
+            }
+            setParam(secondParam) {
+                this.secondParam = secondParam;
+            }
+        }
+        const jaewon = new Person("Jae Won");
+        jaewon.greeting();
+        jaewon.setName("Kelly");
+        jaewon.setParam("Param2");
+        jaewon.greeting();
+
+    // RANDOM NUMBER GAME!
+        while(true) {
+            // EVERY EXECUTION OF WHILE LOOP, IT WILLD
+            const randomNumber = Math.ceil(Math.random() * 10);
+
+            let answer = prompt("Guess the number");
+            // CASTING
+            answer = Number(answer);
+
+            if(randomNumber == answer){
+                alert("You win!");
+                break;
+            } else {
+                console.log("You guessed", answer, "But the right number was", randomNumber);
+            }
+        }
     </script>
 </body>
 </html>
