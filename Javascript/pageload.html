@@ -251,6 +251,34 @@
         jaewon.setParam("Param2");
         jaewon.greeting();
 
+    // JSON -> NO VARIABLE
+    // JAVASCRIPT OBJECT "WITHOUT VARIABLE NAME"
+        /*{
+            'name': 'JaeWon',
+            'favFood': ['pizza', 'taco', 'Salmon'],
+            'age': 25,
+            'children': [
+                {
+                    'name':'Nathan',
+                    'age': 4,
+                },
+                {
+                    'name':'Aaron',
+                    'age': 1
+                }
+            ]
+        }
+        */
+    // AJAX : Asynchronous JavaScript and XML -> XMLHttpRequest
+    // Post, Tweet <- loading more images (asking for more data)
+    // Keep scrolling <- super lightweight
+    // fetch() API
+        fetch('https://swapi.dev/api/people/3/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+        
     // RANDOM NUMBER GAME!
         while(true) {
             // EVERY EXECUTION OF WHILE LOOP, IT WILLD
