@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Bootstrap!</title>
+    <!-- Cached version of download -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@getbootstrap">
+    <meta name="twitter:creator" content="@getbootstrap">
+    <meta name="twitter:title" content="Flex">
+    <meta name="twitter:description" content="Quickly manage the layout, alignment, and sizing of grid columns, navigation, components, and more with a full suite of responsive flexbox utilities. For more complex implementations, custom CSS may be necessary.">
+    <!-- Favicons -->
+    <link rel="icon" href="favicon_io/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon_io/favicon-16x16.png" sizes="16x16" type="image/png">
+    <!-- Bootstrap core CSS -->
+    <style class="anchorjs"></style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+
+    <style>
+        .selector-for-some-widget {
+        box-sizing: content-box;
+      }
+    </style>
+    
+</head>
+<body>
+    <h1>Hello BootStrap!!!</h1>
+    <div class="bd-example">
+        <div class="d-flex p-2 bd-highlight"> This is a block flex! with padding 2 and highlighted background!</div>
+        <!-- ::after -->
+    </div>
+    <p class="text-warning bg-dark">This is a warning text</p>
+    
+
+    <div class="selector-for-some-widget">
+        Overwrite the box-size for 3rd party softwares
+    </div>
+    <div class="p-3">
+        <div class="d-inline p-2 bg-primary text-white"> d-inline1</div>
+        <div class="d-inline p-2 bg-dark text-white"> d-inline2</div>
+    </div>
+
+    <div class="bd-example d-md-flex">
+    <!-- USE OF d-md-flex ALLOWS TO STORE SCROLL BARS "NEXT TO EACH OTHER" RATHER THAN IN NEXT LINE! -->
+        <div class="overflow-auto p-3 mb-3 mb-md-0 me-md-3 bg-light" style="max-width: 260px; max-height: 100px;">
+            "This is an example of using"
+            <code>.overflow</code>
+            " on an element with set width and height. By design, this content will vertically scroll!"
+        </div>
+        <div class="overflow-scroll p-3 bg-light" style="max-width: 260px; max-height: 100px;">
+            This is an example of using <code>.overflow-scroll</code> on an element with set width and height dimensions.
+        </div>
+    <!-- THIS IS WHEN THE IMPORTANCE OF "mb-3" & "mb-md-0" & "me-md-3" COMES IN..
+        SINCE, IT WILL GIVE A SPACE FOR THE COMING SCROLL BAR!! -->
+        <div class="overflow-scroll p-3 bg-light" style="max-width: 260px; max-height: 100px;">
+            This is an example of using <code>.overflow-scroll</code> on an element with set width and height dimensions.
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+
+    </script>
+</body>
+</html>
