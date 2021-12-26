@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- h1.customClassName#customId -->
+    <h1 class="customClassName">
+        Hello World!
+    </h1>
+    <h1 class="customClassName1" id="customId">
+        Hello World!
+    </h1>
+    <button class="custom-class">This is a custom button</button>
+    <p id="customId2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione iusto exercitationem dolorem deleniti fugit tenetur hic veritatis incidunt atque. Voluptates porro nihil vel temporibus nisi explicabo delectus quo quae?
+    </p>
+    <p>
+        <strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Ipsum ratione iusto exercitationem dolorem deleniti fugit tenetur hic veritatis incidunt atque. Voluptates porro nihil vel temporibus nisi explicabo delectus quo quae?
+    </p>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            /* $(selector).event(function() {
+
+            })
+            */
+            // console.log("jQuery is loaded");
+            $("h1.customClassName").text("This was changed via jQuery #1");
+            // $("#customId")
+            $("h1.customClassName1").text("This has been changed #2");
+            $("button.custom-class").text("BUTTON HAS BEEN CHANGED #3");
+            $("p").html("<strong>This is bolded and replaced</strong>");
+        // ONLY THE FIRST "h1" WILL BE OVERWRITTEN
+            $("h1").text("This will overwrite!! #4");
+            $("#customId").text("Changed again #5")
+            $("body p strong").text("Change number #6")
+        })
+        
+    </script>
+</body>
+</html>
