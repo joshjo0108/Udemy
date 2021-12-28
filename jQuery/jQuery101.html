@@ -7,20 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- h1.customClassName#customId -->
-    <h1 class="customClassName">
-        Hello World!
-    </h1>
-    <h1 class="customClassName1" id="customId">
-        Hello World!
-    </h1>
-    <button class="custom-class">This is a custom button</button>
-    <p id="customId2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione iusto exercitationem dolorem deleniti fugit tenetur hic veritatis incidunt atque. Voluptates porro nihil vel temporibus nisi explicabo delectus quo quae?
-    </p>
-    <p>
-        <strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Ipsum ratione iusto exercitationem dolorem deleniti fugit tenetur hic veritatis incidunt atque. Voluptates porro nihil vel temporibus nisi explicabo delectus quo quae?
-    </p>
+    
+    <div id="target">
+        Add HTML before and after this!
+    </div>
+
+    <h2>
+        Some text in here
+    </h2>
+
+    <div id="customId"></div>
+
+    <section id="1">
+        This is section 1
+    </section>
+    <section id="2">
+        This is section 2
+    </section>
+
+    <input type="text" value="Hello World!">
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -30,18 +35,33 @@
 
             })
             */
-            // console.log("jQuery is loaded");
-            $("h1.customClassName").text("This was changed via jQuery #1");
-            // $("#customId")
-            $("h1.customClassName1").text("This has been changed #2");
-            $("button.custom-class").text("BUTTON HAS BEEN CHANGED #3");
-            $("p").html("<strong>This is bolded and replaced</strong>");
-        // ONLY THE FIRST "h1" WILL BE OVERWRITTEN
-            $("h1").text("This will overwrite!! #4");
-            $("#customId").text("Changed again #5")
-            $("body p strong").text("Change number #6")
-        })
+        // DYNAMICALLY CREATES A <h1> AND <span>
+            $("#customId").html("<h1>Hello World!#2<span> This is span</span> </h1>");
+        // DYNAMICALLY MODIFIES THE TEXT
+            $("span").text(" This has been changed!#2");
+
+        // HTML vs TEXT
+            $("#1").html("<b> HTML format <strong>");
+            $("#2").text("<b>This is when you want to show your code</b>");
+
+        // CHANGE INPUT VALUE
+            $("input").val("This is changed!!!!!")
+
+        // ADD TEXT BEFORE AND AFTER WITHIN <h2>
+            $("h2")
+                .html("<u>Overwritten text</u>")
+            // ADD SOME TEXT AT THE END
+                .append("<b>Appended text</b>")
+            // ADD SOME TEXT AT THE BEGINNING
+                .prepend("<i>Prepended text</i>")
+
+        // ADD <h3> BEFORE, AND ADD <p> AFTER
+            $("div#target")
+                .before("<h3>This is Before as h3.</h3>")
+                .after("<p>This is After as p.</p>")
+        });
         
     </script>
 </body>
 </html>
+
