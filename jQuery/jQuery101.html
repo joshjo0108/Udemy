@@ -27,6 +27,18 @@
 
     <input type="text" value="Hello World!">
 
+    <div>
+        <p>
+            Lorem1 ipsum dolor sit amet consectetur adipisicing elit. Autem tempora inventore quis optio dolorum laborum itaque quibusdam natus vitae dolore iure sed eaque, ducimus, ad at neque debitis ratione error.
+        </p>
+        <p>
+            Lorem, ipsum.
+        </p>
+        <p class="last-class">
+            Lorem, ipsum dolor.
+        </p>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script>
@@ -59,6 +71,13 @@
             $("div#target")
                 .before("<h3>This is Before as h3.</h3>")
                 .after("<p>This is After as p.</p>")
+
+        // <p> THAT IS WITHIN <div> AND IS class="last-class"
+            $("div p.last-class")
+            // THIS IS STILL REMOVED!
+                .append("<p>This is replacement of text3</p>")
+                .remove()
+
         });
         
     </script>
