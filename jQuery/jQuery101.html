@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #box {
+            height: 200px;
+            width: 200px;
+            margin: 20px auto;
+            background-color: black;
+        }
+    </style>
 </head>
 <body>
     
@@ -38,6 +46,16 @@
             Lorem, ipsum dolor.
         </p>
     </div>
+
+    <div id="parent">
+        <strong>This is bolded</strong>
+        <em>This is Italic</em>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque modi numquam a omnis? Nihil amet delectus exercitationem sunt ipsam impedit, quam suscipit voluptas, maiores aliquid ex cupiditate perspiciatis, id laboriosam.</p>
+    </div>
+
+    <button id="clicked"></button>
+
+    <div id="box"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -77,7 +95,37 @@
             // THIS IS STILL REMOVED!
                 .append("<p>This is replacement of text3</p>")
                 .remove()
+        // CHILD ELEMENT REMOVE
+            const $parent = $("div#parent");
+            $parent.empty();
+            // THIS THEN CAN BE WAIT FOR SOME TIME TO FETCH SOMETHING...
+            $parent.html("<h1>This is overwritting the existing text</h1>");
 
+        // EVENT CLICK
+            // LEAST PREFERRED WAY
+            /*$("button").click(function() {
+                console.log("I am clicked!");
+            })*/
+            // CLEANER WAY OF WRITING
+            $("button").on("click", function() {
+                console.log("I am clicked number 2");
+            })
+            // THE BEST WAY: DYNAMICALLY BEING CLICKED
+            $(document).on("click", "button", function() {
+                console.log("I am clicked number 3");
+            })
+
+            const $check = $("#clicked");
+            $check.html("<button>Click me Dynamically</button>");
+
+        //  HOVER EVENTS
+            $("#box")
+                .on("mouseenter",function() {
+                    console.log("Your mouse has entered the box")
+                })
+                .on("mouseleave", function() {
+                    console.log("Your mouse has left the box")
+                })
         });
         
     </script>
