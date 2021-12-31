@@ -57,6 +57,13 @@
 
     <div id="box"></div>
 
+    <input type="text" class="select-me" value="Hello World">
+    <input type="text" class="select-me" value="This is a second Hello world">
+
+    <textarea name="textAreaName" id="" cols="30" rows="10" ></textarea>
+
+    <input type="text" id="blurred" value = "type website URL">
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script>
@@ -75,7 +82,7 @@
             $("#2").text("<b>This is when you want to show your code</b>");
 
         // CHANGE INPUT VALUE
-            $("input").val("This is changed!!!!!")
+            // $("input").val("This is changed!!!!!")
 
         // ADD TEXT BEFORE AND AFTER WITHIN <h2>
             $("h2")
@@ -126,6 +133,26 @@
                 .on("mouseleave", function() {
                     console.log("Your mouse has left the box")
                 })
+        // WHEN YOU WRITE ANY INPUT
+            $(".select-me").on("keyup", function() {
+                console.log( $(this).val() );
+            })
+            
+        // FOCUS EVENT LISTENERS
+            // CALLING IT BY ITS ATTRIBUTE
+            $("[name = 'textAreaName']").on("focus", function() {
+                console.log("You have focused into this input area")
+            })
+
+        // BLUR EVENT LISTENERS
+            $("input#blurred").on("blur", function() {
+                // ORIGINAL VALUE OF value
+                let webURL = $(this).val()
+                if (webURL.substr(0,4) !== "http") {
+                    webURL = `http://${webURL}`;
+                }
+                $(this).val(webURL);
+            })
         });
         
     </script>
