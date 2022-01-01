@@ -64,6 +64,11 @@
 
     <input type="text" id="blurred" value = "type website URL">
 
+    <form>
+        <input type="text" name="name" placeholder="Your Name">
+        <button id="button1" type="submit">Submit this form</button>
+    </form>
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script>
@@ -152,6 +157,16 @@
                     webURL = `http://${webURL}`;
                 }
                 $(this).val(webURL);
+            })
+
+        // FORM SUBMISSION AND EVENT LISTENERS
+            $("form").on("submit", function(event) {
+                event.preventDefault(); // this will not change the address of URL
+                console.log("Submitting the form has been blocked");
+            })
+            $("button#button1").on("click", function(event) {
+                event.preventDefault(); // this will prevent from being clicked
+                console.log("Normal click is prevented");
             })
         });
         
