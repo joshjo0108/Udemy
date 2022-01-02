@@ -6,11 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #box {
+        .box {
             height: 200px;
             width: 200px;
             margin: 20px auto;
             background-color: black;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .width-100 {
+            width: 100%;
         }
     </style>
 </head>
@@ -55,8 +61,6 @@
 
     <button id="clicked"></button>
 
-    <div id="box"></div>
-
     <input type="text" class="select-me" value="Hello World">
     <input type="text" class="select-me" value="This is a second Hello world">
 
@@ -68,6 +72,14 @@
         <input type="text" name="name" placeholder="Your Name">
         <button id="button1" type="submit">Submit this form</button>
     </form>
+
+    <button id="clickme">Click me</button>
+    <div id="box"></div>
+    <div class="box"></div>
+
+    <button class="remove-blue">Remove Blue</button>
+    <button class="remove-width">Remove Width</button>
+    <div class="box blue width-100"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -131,13 +143,13 @@
             $check.html("<button>Click me Dynamically</button>");
 
         //  HOVER EVENTS
-            $("#box")
-                .on("mouseenter",function() {
-                    console.log("Your mouse has entered the box")
-                })
-                .on("mouseleave", function() {
-                    console.log("Your mouse has left the box")
-                })
+            // $("#box")
+            //     .on("mouseenter",function() {
+            //         console.log("Your mouse has entered the box")
+            //     })
+            //     .on("mouseleave", function() {
+            //         console.log("Your mouse has left the box")
+            //     })
         // WHEN YOU WRITE ANY INPUT
             $(".select-me").on("keyup", function() {
                 console.log( $(this).val() );
@@ -167,6 +179,29 @@
             $("button#button1").on("click", function(event) {
                 event.preventDefault(); // this will prevent from being clicked
                 console.log("Normal click is prevented");
+            })
+            
+        // HIDE AND SHOW ELEMENTS
+            $("#clickme").on("click", function(e) {
+                // $("#box").hide();    //EITHER HIDE
+                $("#box").show();       // OR SHOW
+            })
+        
+        // ADD CSS CLASSES
+            $("#clickme").on("click", () => {
+                $(".box").addClass("blue width-100");
+            })
+
+        // REMOVE CSS CLASSES
+            const $box = $(".box");
+            const $removeBlue = $(".remove-blue");
+            const $removeWidth = $(".remove-width");
+
+            $removeBlue.on("click", function() {
+                $box.removeClass("blue");
+            })
+            $removeWidth.on("click", function() {
+                $box.removeClass("width-100");
             })
         });
         
