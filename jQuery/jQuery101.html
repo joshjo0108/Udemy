@@ -10,6 +10,7 @@
             height: 200px;
             width: 200px;
             margin: 20px auto;
+            padding: 20px;
             background-color: black;
         }
         .blue {
@@ -81,6 +82,12 @@
     <button class="remove-width">Remove Width</button>
     <div class="box blue width-100"></div>
 
+    <input type="text">
+    <button class="toggle-blue-class">Toggle</button>
+    <div class="box blue"></div>
+
+    <button class="animationButton">Animation Button</button>
+    <div class="box"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script>
@@ -202,6 +209,70 @@
             })
             $removeWidth.on("click", function() {
                 $box.removeClass("width-100");
+            })
+
+        // TOGGLE ON AND OFF
+            const $box1 = $(".box");
+            const $toggle = $(".toggle-blue-class");
+
+            $toggle.on("click", function() {
+                $box1.toggleClass("blue");  // TOGGLE BLUE ON AND OFF   
+                // $box1.fadeToggle(); // SLOW FADE THE BOX AWAY
+                $box1.slideToggle(1500, function() {
+                    // CALLBACK FUNCTION
+                    console.log("Slide Toggle is complete")
+                    $(this).remove()
+                });    //SLIDE UP AND DOWN
+            })
+
+            $("input").on("keyup", function() {
+                const value = $(this).val();
+                if(value == "blue") {
+                    $box1.addClass("blue");
+                } else {
+                    $box1.removeClass("blue");
+                }
+            })
+        
+        // ADDING CSS STYLE
+            $(".box")
+                // .css("background-color", "orange")
+                // .css("border", "10px solid black")
+                // .css("border-radius", "50%")
+                .css({
+                    backgroundColor: "yellow",
+                    border: "10px solid blue",
+                    borderRadius: "10px"
+                })
+
+        // FADE IN AND OUT
+            // $box.fadeIn(4500);
+            // $box.fadeOut(4500);
+
+        // ANIMATION
+            const $animationButton = $(".animationButton");
+            $animationButton.on("click", function() {
+                $(".box").animate({
+                    opacity: 0.5,
+                    width: "100%",
+                    backgroundColor: "pink"
+                }, 4000)
+            })
+        
+        // WIDTH DIMENSIONS
+            // $box.innerHeight();      // CONSIDER MARGIN, PADDING FOR THE FOLLOWINGS
+            // $box.outerHeight();
+            // $box.outerHeight(true);
+            // $box.height();
+
+        // RESIZING THE WINDOW
+            $(window).on("resize",  function() {
+                console.log($(window).width(), 'x', $(window).height())
+                if($(window).width() <= 230) {
+                    $("body").css("background-color", "pink")
+                } else {
+                    $("body").css("background-color", "green")
+                }
             })
         });
         
