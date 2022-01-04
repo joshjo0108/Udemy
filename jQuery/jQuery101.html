@@ -89,6 +89,14 @@
     <button class="animationButton">Animation Button</button>
     <div class="box"></div>
 
+    <ul>
+        <li>First Item</li>
+        <li>Second Item</li>
+        <li>Third Item</li>
+    </ul>
+
+    <input type="text" id="passwordInput">
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -259,6 +267,7 @@
                 }, 4000)
             })
         
+
         // WIDTH DIMENSIONS
             // $box.innerHeight();      // CONSIDER MARGIN, PADDING FOR THE FOLLOWINGS
             // $box.outerHeight();
@@ -274,7 +283,40 @@
                     $("body").css("background-color", "green")
                 }
             })
+
+        // FOR EACH LOOP
+            $("li").each(function(index, element) {
+                const originalText = $(element).text()
+                $(element).text(`${index + 1}. ${originalText}`)
+                if (index === 2) {
+                    $(element)
+                        .css("background-color", "black")
+                        .css("color", "white")
+                }
+            })
+        
+        // PASSWORD ATTRIBUTE INPUT
+            const $input = $("input#passwordInput")
+            $input.attr("type", "password")
+
+        // API AJAX GET REQUEST
+            $.get('https://swapi.dev/api/people/1/', function(data) {
+                console.log(data['name'])
+                console.log(data['mass'])
+                console.log(data['height'])
+            })
+
+        // ASK A SERVER TO UPDATE THE DATA
+            $.post(
+                'https://httpbin.org/post',
+                {"Instagram":"@coding.for.everybody"},
+                function(data) {
+                    console.log("Post was complete")
+                    console.log(data)
+                }
+            )
         });
+
         
     </script>
 </body>
