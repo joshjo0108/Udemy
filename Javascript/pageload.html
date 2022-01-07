@@ -273,7 +273,9 @@
     // Post, Tweet <- loading more images (asking for more data)
     // Keep scrolling <- super lightweight
     // fetch() API
+    // FETCHES DATA FROM ANOTHER PAGE AND LOADS IT INTO YOUR JAVASCRIPT FUNCTION
         fetch('https://swapi.dev/api/people/3/')
+        // TAKE IT AS A .json FORMAT
             .then(response => response.json())
             .then(data => {
                 console.log(data);

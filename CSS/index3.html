@@ -1,75 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Document</title>
-        <style>
-            /* CENTER THE TEXT */
-            h1#intro {
-                text-align: center;
-            }
-            div.red-border {
-            /* THICKNESS OF THE BORDER */
-                border-width: 2px;
-                border-style: dashed ;
-                border-color: red;
-                /* border-color: #f00 */
+        <title>index3</title>
 
-            /* MAKES AN ANGLE AT THE EDGE */
-                /* border-radius: 10px; */
-                border-top-left-radius: 5px;
-                border-top-right-radius: 50%;
-                border-bottom-left-radius: 50%;
-                border-bottom-right-radius: 5px;
-            /* SAME AS */
-                border-radius: 5px 50% 50% 5px;
-
-                width: 200px;
-                height: 200px;
-
-            /* OVERWRITES THE TOP PART */
-                border: 1px solid black;
-            }
-
-            div {
-            /* OVERWRITE BLOCK TO INLINE */
-            /* THIS WILL HAVE NO EFFECT ON WIDTH OR HEIGHT */
-                display: inline;
-            /* THIS IS USED TO ADJUST THE WIDTH & HEIGHT */
-                display: inline-block;
-                border: 1px solid red;
-
-            /* ONLY WHEN inline-block */
-                width: 200px;
-                height: 200px;
-            }
-
-            div.half-width {
-                width: 500px;
-                border: 1px solid black;
-            /* WHEN YOU USE px MAKE SURE TO USE INLINE-BLOCK OR BLOCK ONLY!! */
-                display: inline-block;
-            }
-
-            span.half-width {
-                width: 200px;
-                height: 200px;
-                border: 1px solid red;
-                display: inline-block;
-            }
-
-            #leaf {
-                width: 200px;
-                height: 200px;
-                border: 2px solid black;
-                background-image: url("image.png");
-                background-size: cover;
-                background-position: center;
-                border-radius: 0 50% 0 50%;
-                box-shadow: 2px 2px 15px inset #444444;
-            }
-
-
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class="red-border">This is a border</div>
@@ -89,6 +23,11 @@
             This is a half width using span
         </span>
 
-        <div id="leaf"></div>
+        <div id="leaf">Example of the text</div>
+
+        <div id="inline">Some text here</div>
+
+        <div id="box">This is an image</div>
+
     </body>
 </html>

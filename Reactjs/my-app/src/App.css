@@ -39,3 +39,12 @@ PLEASE REMEMBER THIS!!!!*/
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  background-color: black;
+  border: 1px solid yellow;
+  color: yellow;
+  padding: 20px;
+  font-size: 30px;
+  margin: 20px;
+}

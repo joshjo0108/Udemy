@@ -50,6 +50,8 @@ class StarWars extends React.Component {
 
 
   render() {
+
+  // THIS HAS BEEN USED AS A FUNCTION
     const movies = this.state.films.map((film,i) => {
       return <FilmItemRow key={i} url={film} />
     })
@@ -65,6 +67,7 @@ class StarWars extends React.Component {
             {/* LINKING */}
               <p><a href={this.state.homeworld}>HomeWorld</a>: {this.state.homeworld}</p>
             {/* WITHOUT <ul></ul> */}
+            {/* TO CALL A FUNCTION -> {movies} */}
               {movies}
             </div>
         }

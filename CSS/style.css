@@ -1,0 +1,111 @@
+body {
+    /* background-image: url(image.png); */
+    background-size: contain;
+    background-color: #f5f5f5;
+}
+
+.floating-image {
+    border: 1px solid black;
+    box-shadow: 0 0 8px black;
+    margin: 10px;
+/* WRAP TEXT AROUND LIKE A NEWS PAPER */
+    float: left;
+/* EXTRA SPACE BETWEEN THE IMAGE AND THE BORDER */
+    padding: 2px;
+}
+
+#box {
+    display: block;
+    width: 200px;
+    height: 200px;
+    color: red;
+    background-color: rgba(0, 0,0, 0.5);
+    background-size: contain;
+    text-align: center;
+/* THIS IS GOING TO REPEAT 50px auto */
+    margin: 50px auto;
+/* THIS IS GOING TO MAKE THE TEXT OPAQUE AS WELL */
+    /* opacity: 0.5; */
+    padding: 25px;
+}
+
+/* CENTER THE TEXT */
+h1#intro {
+    text-align: center;
+}
+div.red-border {
+/* THICKNESS OF THE BORDER */
+    border-width: 2px;
+    border-style: dashed ;
+    border-color: red;
+    /* border-color: #f00 */
+
+/* MAKES AN ANGLE AT THE EDGE */
+    /* border-radius: 10px; */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 5px;
+/* SAME AS */
+    border-radius: 5px 50% 50% 5px;
+
+    width: 200px;
+    height: 200px;
+
+/* OVERWRITES THE TOP PART */
+    border: 1px solid black;
+}
+
+div {
+/* OVERWRITE BLOCK TO INLINE */
+/* THIS WILL HAVE NO EFFECT ON WIDTH OR HEIGHT */
+    display: inline;
+/* THIS IS USED TO ADJUST THE WIDTH & HEIGHT */
+    display: inline-block;
+    border: 1px solid red;
+
+/* ONLY WHEN inline-block */
+    /* width: 200px;
+    height: 200px; */
+}
+
+div.half-width {
+    width: 500px;
+    border: 1px solid black;
+/* WHEN YOU USE px MAKE SURE TO USE INLINE-BLOCK OR BLOCK ONLY!! */
+    display: inline-block;
+}
+
+/* CREATING A PERFECT SQUARE WITH CONTENT BESIDE IT */
+span.half-width {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    display: inline-block;
+}
+
+#leaf {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    /* padding: 10px; */
+/* INSIDE OF THE BORDER */
+    padding: 10px 15px 20px 25px;
+    /* TOP RIGHT LEFT BOTTOM */
+    margin: 19px 15px 20px 25px;
+    /* IT requires display: block; */
+    /* margin: auto <- centers the block element */
+    margin: auto;
+    display: block;
+    background-image: url("image.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 50% 0 50%;
+    box-shadow: 2px 2px 15px inset #444444;
+}
+
+#inline {
+    display: inline-block;
+    border: 1px solid red;
+    max-width: 500px;
+}
